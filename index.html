@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Pc parts picker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="pcparts.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
+    <!-- Dark MDB theme -->
+    <link rel="stylesheet" href="css/mdb.dark.min.css" />
+    <!-- Regular MDB theme -->
+    <!-- <link rel="stylesheet" href="css/mdb.min.css" /> -->
+  </head>
+  <body>
+    <!-- Start your project here-->
+  
+  <header>
+    <h1 class="animate__animated animate__fadeInDown">Configure your PC build</h1>
+  </header>
+  <main>
+
+    <section id="CPUsection">
+      <header>
+        <h2>Choose your CPU + Motherboard</h2>
+      </header>
+      <img id="cpuimage" src="img/toppng.com-file-processor-icon-vector-980x982.png">
+      <br>
+        <select class="form-select" aria-label="Default select example" id="CPUandMotherboard">
+        <option value=0>-</option>
+        <option id='i5-9400f' value=220>Intel Core i5-9400F + MSI Z390-A Pro Motherboard</option>
+        <option id='Ryzen 5 3600' value=300>AMD Ryzen 5 3600 + MSI B450-A Pro Max Motherboard</option>
+        <option id='Ryzen 7 3700x' value=440>AMD Ryzen 7 3700X + Asus ROG Strix B550-F Gaming (Wi-FI) Motherboard</option>
+      </select>
+      <br><br>
+      <h3><span id="cpuPrice"></span></h3>
+    </section>
+
+    <section id="RAM">
+      <header><h2>Choose your Memory</h2></header>   
+      <br>
+      Number of sticks:
+      <br>
+      <div id="sticksRadio">
+        1x<input class="form-check-input" type="radio" id="onestick" name="numberofsticks" value=1>
+        2x<input class="form-check-input" type="radio" id="twosticks" name="numberofsticks" value=2>
+        3x<input class="form-check-input" type="radio" id="threesticks" name="numberofsticks" value=3>
+        4x<input class="form-check-input" type="radio" id="foursticks" name="numberofsticks" value=4>
+      </div>
+      <div id="ramstorageandspeedsection">
+        <div id="ramspeedsection">
+          Speed:
+          <select class="form-select" aria-label="Default select example" id="ramspeedselect">
+            <option value=0>-</option>
+            <option value=5>2666MHz</option>
+            <option value=20>3200MHz</option>
+            <option value=30>3600MHz</option>
+            <option value=40>4000MHz</option>
+          </select>
+        </div>
+        <div id="ramsizesection">
+          Size:
+          <select class="form-select" aria-label="Default select example" id="ramsizeselect">
+            <option value=0>-</option>
+            <option value=15>4gb</option>
+            <option value=30>8gb</option>
+            <option value=60>16gb</option>
+            <option value=120>32gb</option>
+          </select>
+        </div>
+      </div>
+      Brand:
+      <select class="form-select" aria-label="Default select example" id="rambrandselect">
+        <option value=0>-</option>
+        <option value=15>Corsair</option>
+        <option value=10>HyperX</option>
+        <option value=10>G.Skill</option>
+        <option value=5>Crucial</option>
+      </select>
+      <br><br>
+      <h3><span id="ramPrice"></span></h3>
+    </section>
+
+    <section id="GPU">
+      <header><h2>Choose your Video Card</h2></header>
+      <img id="GPUimage" src="img/GPU.png">
+      <br>
+      <select class="form-select" aria-label="Default select example" id="GPUselect">
+        <option value="0">-</option>
+        <option value="150">Biostar Radeon RX 550 2GB</option>
+        <option value="300">Gigabyte GeForce GTX1050 Ti 4GB D5</option>
+        <option value="600">Gigabyte GeForce GTX 1660 Super 6GB OC</option>
+      </select>
+      <br><br>
+      <h3><span id="gpuPrice"></span></h3>
+    </section>
+
+    <section id="PSU">
+      <header><h2>Choose your power supply</h2></header>
+      <br><br>
+      <label for="cars">Wattage:</label>
+      <br><br>
+      <select class="form-select" aria-label="Default select example" id="wattage">
+        <option id="0W" value=0>-</option>
+        <option id="450W" value=50>450W</option>
+        <option id="550W" value=60>550W</option>
+        <option id="650W" value=70>650W</option>
+        <option id="750W" value=90>750W</option>
+        <option id="850W" value=130>850W</option>
+        <option id="1000W" value=150>1000W</option>
+      </select>
+      <br>
+      <h3><span id="PSUprice"></span></h3>
+      <br>
+      
+      <header><h3>Optional</h3></header>
+      <input type="checkbox" class="form-check-input" id="silent" value=10>
+      <label for="silent"> Silent (+10,00 €)</label><br>
+      <input type="checkbox" class="form-check-input" id="removeablecables" value=10>
+      <label for="removeablecables"> Removable cables (+10,00 €)</label><br>
+
+    </section>
+
+    <section id="Storage">
+      <header><h2>Choose your Storage (SSD/HDD)</h2></header>
+      <div id="storageSection">
+        <div id="SSDsection">
+          <header><h5>Solid State Drive:</h5></header>
+          <img src="img/ssd.png" id="ssdimage">
+          <br>
+          <select class="form-select" aria-label="Default select example" id="ssdselect">
+            <option value=0>-</option>
+            <option value=50>Crucial MX500 SSD 500GB</option> 
+            <option value=65>Samsung 970 Evo Plus SSD 500GB M.2 NVMe</option>
+            <option value=85>Samsung 870 Evo SSD 500GB</option>
+          </select>
+        </div>  
+        <div id="HDDsection">
+          <header><h5>Hard Drive:</h5></header>
+          <img src="img/hdd.png" id="hddimage">
+          <br>
+          <select class="form-select" aria-label="Default select example" id="hddselect">
+            <option value=0>-</option>
+            <option value=30>Western Digital Blue 1TB (7200rpm)</option>
+            <option value=50>Western Digital Blue 2TB (5400rpm)</option>
+          </select>  
+        </div>
+      </div>
+      <h3><span id="storageprice"></span></h3>
+    </section>
+
+    <section id="Case">
+      <header><h2>Choose your Case</h2></header>
+      <img id="caseimage" src="img/case.png">
+      <br>
+      <select id="caseselect" class="form-select" aria-label="Default select example">
+        <option value=0>-</option>
+        <option value=45>Kolink Stronghold Black</option>
+        <option value=60>Cougar MX410 Mesh-G RGB</option>
+        <option value=95>Be Quiet Pure Base 500DX Black</option>
+        <option value=105>NZXT H510i Red</option>
+      </select>
+      <br>
+      <h3><span id="casePrice">Price:</span></h3>
+      <br><br>
+      <header><h3>Optional</h3></header>
+      <input type="checkbox" class="form-check-input" id="glasspanel" value=20>
+      <label for="glasspanel"> Glass panel (+20,00 €)</label><br>
+    </section>
+
+    <section id="Cooling">
+      <header><h2>Choose your Cooling system</h2></header>
+      <img src="img/cooler.png" id="coolerimage">
+      <br>
+      <select id="coolerselect" class="form-select" aria-label="Default select example">
+        <option value=0>-</option>
+        <option value=35>CoolerMaster Hyper 212 Black Edition</option>
+        <option value=75>Be Quiet Dark Rock Pro 4</option>
+        <option value=145>NZXT Kraken X63</option>
+      </select>
+      <br><br>
+      <h3><span id="coolerprice"></span></h3>
+      <br>
+      <header><h3>Optional</h3></header>
+      <input type="checkbox" class="form-check-input" id="thermalpaste" value=5>
+      <label for="thermalpaste"> Thermal paste (+5,00 €)</label><br>
+    </section>
+
+    <section id="TotalPrice">
+      <header><h2>Total Price</h2></header>
+      <br>
+        <h1><span id="totalprice"></span></h1>
+        <br>
+      <button type="button" class='btn btn-primary ripple-surface' id="calculate">Calculate</button>
+    </section>
+
+  </main>
+
+    <!-- End your project here-->
+
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    
+  </body>
+</html>

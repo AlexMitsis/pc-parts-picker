@@ -1,0 +1,164 @@
+section {
+    padding: 1.5rem;
+    border: 3px solid black;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    background-color: rgb(55,55,55);
+}
+header {
+	text-align: center;
+}
+main{
+	gap: 20px; /*--auto 1fr 2fr repeat(3, 1fr)*/
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-template-rows: 1fr;
+}
+img{
+	height: 13rem;
+	align-content: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+}
+
+.form-check-input{
+	vertical-align: middle;
+}
+
+label {
+	display:block;
+	vertical-align: middle;
+}
+
+#glasspanel, #thermalpaste, #removeablecables, #silent{
+	vertical-align: middle;
+}
+
+
+#RAM{
+	display: flex;
+	flex-direction: column;
+}
+
+#ramstorageandspeedsection{
+	display: flex;
+	padding: 1rem;
+	flex-direction: row;
+	align-content: center;
+	justify-content: center;
+	vertical-align: middle;
+}
+
+#sticksRadio{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+#calculate:hover {
+	cursor: pointer;
+}
+
+#storageSection{
+	display: flex;
+	padding: 1rem;
+	flex-direction: row;
+	align-content: space-evenly;
+	justify-content: space-evenly;
+
+}
+
+#SSDsection{
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	padding: 1.4rem;
+}
+
+#HDDsection{
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	padding: 1.4rem;
+}
+
+#ramspeedsection{
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	padding: 1.3rem;
+	vertical-align: middle;
+}
+
+#ramsizesection{
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	padding: 1.3rem;
+	vertical-align: middle;
+}
+
+#ssdimage{
+	width: 300px;
+}
+
+#sticksRadio{
+	padding: 5px;
+}
+
+#coolerimage{
+	max-width: 400px;
+}
+
+/* Colorize and assign grid names */
+#CPUsection  { grid-area: CPUsection; }
+#RAM { grid-area: RAM; }
+#GPU { grid-area: GPU; }
+#PSU   { grid-area: PSU; }
+#Storage  { grid-area: Storage; }
+#Case { grid-area: Case; }
+#Cooling { grid-area: Cooling; }
+#TotalPrice { grid-area: TotalPrice; }
+/* Grid container - small screens */
+main {
+    display: grid;
+    grid-gap: 7px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    	"CPUsection"
+		"RAM"
+		"GPU"
+		"PSU"
+		"Storage"
+		"Case"
+		"Cooling"
+		"TotalPrice";
+}
+
+/* Medium screens */
+@media all and (max-width: 600px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "CPUsection CPUsection"
+            "RAM PSU"
+            "GPU GPU"
+            "Storage Storage"
+            "Cooling Cooling"
+            "Case TotalPrice";
+    }
+}
+
+/* Large screens */
+@media all and (min-width: 600px) {    
+    main {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+        	"CPUsection CPUsection RAM GPU"
+			"PSU Storage Case Cooling"
+            "TotalPrice TotalPrice TotalPrice TotalPrice";
+    }
+}
