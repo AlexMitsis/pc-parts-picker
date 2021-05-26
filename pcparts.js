@@ -61,10 +61,13 @@ coolerSelect.addEventListener('change', function (ev) {
     else
         coolerImage.setAttribute('src', 'img/cooler.png');
 
-    if(thermalPaste.checked)
-        coolerPrice.innerHTML = Number(coolerSelect.value) + Number(thermalPaste.value) + '€';
+    if(!(coolerSelect.value==="0"))
+        if(thermalPaste.checked)
+            coolerPrice.innerHTML = Number(coolerSelect.value) + Number(thermalPaste.value) + '€';
+        else
+            coolerPrice.innerHTML = Number(coolerSelect.value) + '€';
     else
-        coolerPrice.innerHTML = Number(coolerSelect.value) + '€';
+        coolerPrice.innerHTML = 0 + '€';
 });
 
 ssdSelect.addEventListener('change', function (ev) {
@@ -204,12 +207,15 @@ GPU.addEventListener('change', function (ev) {
 
 wattage.addEventListener('change', function (ev) {
 
-    if(silent.checked && removeableCables.checked)
-        PSUprice.innerHTML = Number(wattage.value) + Number(removeableCables.value) + Number(silent.value) + '€';
-    else if(!silent.checked && removeableCables.checked)
-        PSUprice.innerHTML = Number(wattage.value) + Number(removeableCables.value) + '€';
-    else if(silent.checked && !removeableCables.checked)
-        PSUprice.innerHTML = Number(wattage.value) + Number(silent.value) + '€';
+    if(!(wattage.value==="0"))
+        if(silent.checked && removeableCables.checked)
+            PSUprice.innerHTML = Number(wattage.value) + Number(removeableCables.value) + Number(silent.value) + '€';
+        else if(!silent.checked && removeableCables.checked)
+            PSUprice.innerHTML = Number(wattage.value) + Number(removeableCables.value) + '€';
+        else if(silent.checked && !removeableCables.checked)
+            PSUprice.innerHTML = Number(wattage.value) + Number(silent.value) + '€';
+        else
+            PSUprice.innerHTML = Number(wattage.value) + '€';
     else
         PSUprice.innerHTML = Number(wattage.value) + '€';
 });
@@ -225,6 +231,8 @@ silent.addEventListener('change', function (ev) {
             PSUprice.innerHTML = Number(wattage.value) + Number(silent.value) + '€';
         else
             PSUprice.innerHTML = Number(wattage.value) + '€';
+    else
+        PSUprice.innerHTML = Number(wattage.value) + '€';
 });
 
 removeableCables.addEventListener('change', function (ev) {
@@ -238,6 +246,8 @@ removeableCables.addEventListener('change', function (ev) {
             PSUprice.innerHTML = Number(wattage.value) + Number(silent.value) + '€';
         else
             PSUprice.innerHTML = Number(wattage.value) + '€';
+    else
+        PSUprice.innerHTML = Number(wattage.value) + '€';
 });
 
 pcCase.addEventListener('change', function (ev) {
