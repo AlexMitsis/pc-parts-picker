@@ -1,1 +1,1 @@
-https://alexmitsis.github.io/pcpartpicker/
+https://alexmitsis.github.io/pcpartspicker/
